@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "Debug with pnpm",
+      "request": "launch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run-script", "debug"],
+      "args": ["${file}"],
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${fileDirname}",
+      "type": "node"
+    }
+  ]
+}

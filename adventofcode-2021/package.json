@@ -1,0 +1,39 @@
+{
+  "name": "adventofcode-2022",
+  "version": "1.0.0",
+  "description": "My solution to the Advent of Code challenges in 2022",
+  "keywords": [
+    "adventofcode"
+  ],
+  "author": "S1lV3R <me@s1lv3r.codes> (https://s1lv3r.codes)",
+  "license": "MPL-2.0",
+  "type": "module",
+  "scripts": {
+    "debug": "node --loader ts-node/esm --experimental-specifier-resolution=node",
+    "build": "run-s clean compile postbuild",
+    "runall": "pnpm run debug src/runAll.ts",
+    "start": "node --experimental-specifier-resolution=node dist/runAll.js",
+    "clean": "rm -rf dist",
+    "compile": "tsc",
+    "postbuild": "files=(src/*/input.txt); for file in ${files[@]}; do echo $file; cp $file dist/${file/src\\//}; done",
+    "lint": "eslint --fix src --ext ts"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "1.2.0",
+    "@types/eslint": "8.4.10",
+    "@types/node": "18.11.10",
+    "@types/prettier": "2.7.1",
+    "@typescript-eslint/eslint-plugin": "5.45.0",
+    "@typescript-eslint/parser": "5.45.0",
+    "@typescript-eslint/types": "5.45.0",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.8.0",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.3"
+  }
+}

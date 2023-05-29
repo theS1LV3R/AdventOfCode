@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "Debug deno",
+      "type": "pwa-node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "/home/s1lv3r/.local/share/asdf/shims/deno",
+      "runtimeArgs": ["run", "--unstable", "--inspect-brk", "--allow-all"],
+      "attachSimplePort": 9229,
+      "program": "${file}"
+    }
+  ]
+}
